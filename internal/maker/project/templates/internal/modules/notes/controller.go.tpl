@@ -3,7 +3,7 @@ package notes
 import (
 	"context"
 
-	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v5"
 
 	"{{ .ModulePath }}/internal/modules/notes/api"
 )

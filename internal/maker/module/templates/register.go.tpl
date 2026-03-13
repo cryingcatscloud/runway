@@ -1,7 +1,7 @@
 package {{ .Name }}
 
 import (
-	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v5"
 	"go.uber.org/fx"
 
 	"{{ .ModuleImportPath }}/internal/modules/{{ .Name }}/api"

@@ -10,7 +10,7 @@ import (
 	"net/http"
 {{- end }}
 
-	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v5"
 )
 
 
@@ -69,7 +69,7 @@ type {{ .Module }}Handlers interface {
 
 	{{- if .Raw }}
 
-	{{ .Id }}(c echo.Context) error
+	{{ .Id }}(c *echo.Context) error
 
 	{{- else if .Request }}
 
@@ -103,7 +103,7 @@ type {{ .Module }}Adapter struct {
 
 {{ range .Routes }}
 
-func (a *{{ $.Module }}Adapter) {{ .Id }}(c echo.Context) error {
+func (a *{{ $.Module }}Adapter) {{ .Id }}(c *echo.Context) error {
 
 	{{- if .Raw }}
 	return a.h.{{ .Id }}(c)
